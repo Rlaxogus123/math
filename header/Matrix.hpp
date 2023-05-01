@@ -1,7 +1,7 @@
 #pragma once
-namespace math 
+namespace math
 {
-	class MATRIX 
+	class MATRIX
 	{
 	public:
 		// 4x4 Matrix
@@ -28,21 +28,21 @@ namespace math
 		float* _44 = m[3] + 3;
 
 		MATRIX();
-		MATRIX( float f11, float f12, float f13, float f14,
-			    float f21, float f22, float f23, float f24, 
-			    float f31, float f32, float f33, float f34, 
-			    float f41, float f42, float f43, float f44 );
-		MATRIX(const MATRIX& c);
+		MATRIX(float f11, float f12, float f13, float f14,
+			float f21, float f22, float f23, float f24,
+			float f31, float f32, float f33, float f34,
+			float f41, float f42, float f43, float f44);
+		// MATRIX(const MATRIX& c); >> DeepCopy Initialization -> WIP
 
 		// Operator
 		auto operator+(const MATRIX& matrix) const->MATRIX;
 		auto operator-(const MATRIX& matrix) const->MATRIX;
 		auto operator*(float scalar) const->MATRIX;
-		auto operator*=(float scalar) ->MATRIX&;
+		auto operator*=(float scalar)->MATRIX&;
 		auto operator*(MATRIX& matrix) const->MATRIX; // WIP
 
 		void Identity();
-		void Transpose(); // WIP
+		void Transpose();
 		void Inverse(); // WIP
 	};
 }

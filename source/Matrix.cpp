@@ -57,14 +57,7 @@ auto MATRIX::operator*=(float scalar) -> MATRIX&
 
 auto MATRIX::operator*(MATRIX& matrix) const -> MATRIX
 {
-	for (int row = 0; row < 4; row++) 
-	{
-		for (int col = 0; col < 4; col++) 
-		{
-			// WIP
-		}
-	}
-
+	// WIP
 	return MATRIX();
 }
 
@@ -78,11 +71,14 @@ void MATRIX::Identity()
 
 void MATRIX::Transpose()
 {
-	for (int row = 0; row < 4; row++)
+	// calculate exception : _11, _22, _33, _44
+	for (int row = 0; row < 3; row++)
 	{
-		for (int col = 0; col < 4; col++)
+		for (int col = row + 1; col <= 3; col++)
 		{
-			m[col][row] = m[row][col];
+			float temp = m[row][col];
+			m[row][col] = m[col][row];
+			m[col][row] = temp;
 		}
 	}
 }

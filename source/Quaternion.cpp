@@ -62,15 +62,13 @@ auto Quaternion::operator*(const Quaternion& quaternion) const -> Quaternion
 
 auto Quaternion::Dot(const Quaternion& quaternion) const -> float
 {
-	// * This Operation is need to 'Vector3' HeaderFile and Necessary 'DotProduct'
-
-	float s1 = w;
-	float s2 = quaternion.w;
+	//float s1 = w;
+	//float s2 = quaternion.w;
 	//Vector3 v1 = Vector3(x, y, z);
 	//Vector3 v2 = Vector3(quaternion.x, quaternion.y, quaternion.z);
 	//return s1 * s2 + v1.Dot(v2);
 
-	return 0.0f;
+	return (x * quaternion.x + y * quaternion.y + z * quaternion.z * + w * quaternion.w);
 }
 
 auto Quaternion::LengthSqrt() const -> float
